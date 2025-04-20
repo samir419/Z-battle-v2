@@ -1,0 +1,91 @@
+<html>
+    <head>
+       <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div style="justify-content:center;align-items:center;display:flex;color:white;"> <h2>select moves</h2></div>
+       <div class="row">
+             <div id="selection">
+              
+            </div>
+            <div id="selection2">
+               
+            </div>
+       </div>
+         <div style="justify-content:center;align-items:center;display:flex;color:white;">  <button onclick="gamestart()">start</button></div>
+        
+        <div class="row">
+             <div class="container">
+               <div class="row">
+                    <div class="box">
+                        <h4>player 2</h4>
+                        <div class="header" id="enemy-health"></div>
+                        <div id="healthbar2"></div>
+                        <div class="content">
+                            <p id="player2_data">Content</p>
+                            <div class="button-group">
+                                <button id='enemy-move1' onclick="playmove2(player2.moves[0])"></button>
+                                <button id='enemy-move2' onclick="playmove2(player2.moves[1])"></button>
+                                <button id='enemy-move3' onclick="playmove2(player2.moves[2])"></button>
+                                <button id='enemy-move4' onclick="playmove2(player2.moves[3])"></button>
+                                <button id='enemy-move5' onclick="playmove2(player2.moves[4])"></button>
+                                <button id='enemy-move6' onclick="playmove2(player2.moves[5])"></button>
+                            </div>
+                        </div>
+                         <div style="padding:10px;"> <button onclick="playmove2(attack)">attack</button> <button onclick="playmove2(defend)">defend</button></div>
+                    </div>
+                    <div class="character">
+                       <img src="" width="300px" height="300px" id="char2">
+                   </div>
+               </div>
+           
+           
+            <div class="middle-box">
+                <p id="info data"></p>
+            </div>
+           <div class="row">
+                <div class="character">
+                       <img src="" width="300px" height="300px" id="char1">
+                </div>
+                <div class="box">
+                     <h4>player 1</h4>
+                    <div class="header" id="player-health"></div>
+                    <div id="healthbar1"></div>
+                    <div class="content">
+                        <p id="player1_data">Content</p>
+                        <div class="button-group">
+                            <button id='move1' onclick="playmove(player1.moves[0])"></button>
+                            <button id='move2' onclick="playmove(player1.moves[1])"></button>
+                            <button id='move3' onclick="playmove(player1.moves[2])"></button>
+                            <button id='move4' onclick="playmove(player1.moves[3])"></button>
+                            <button id='move5' onclick="playmove(player1.moves[4])"></button>
+                            <button id='move6' onclick="playmove(player1.moves[5])"></button>
+                        </div>
+                    </div>
+                    <div style="padding:10px;"> <button onclick="playmove(attack)">attack</button> <button onclick="playmove(defend)">defend</button></div>
+                </div>
+           </div>
+        </div>
+        <div style="width:30%;"><p id="terminal"></p></div>
+        </div>
+      <script src="zbattlev2.js"></script>
+      <script>
+        for(let i = 0;i<Zmoves.length;i++){
+            let btn = document.createElement('button')
+            btn.textContent = Zmoves[i].name
+            document.getElementById('selection').appendChild(btn)
+            btn.onclick = ()=>{player1.addmove(Zmoves[i]);console.log(player1.moves);btn.style.backgroundColor='blue'}
+
+            let btn2 = document.createElement('button')
+            btn2.textContent = Zmoves[i].name
+            document.getElementById('selection2').appendChild(btn2)
+            btn2.onclick = ()=>{player2.addmove(Zmoves[i]);console.log(player1.moves);btn2.style.backgroundColor='blue'}
+        }
+        let characters = ['aisha.png','alex.png','nero.png']
+        document.getElementById('char1').src = characters[Math.floor(Math.random()*characters.length)] 
+        document.getElementById('char2').src =characters[Math.floor(Math.random()*characters.length)] 
+      </script>
+      <script>
+      </script>
+    </body>
+</html>
