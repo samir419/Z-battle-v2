@@ -91,5 +91,8 @@ button {
     .row{
         width:100%;
     }
+    .container{
+         flex-direction:column;
+        } 
         
 }
