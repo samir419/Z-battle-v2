@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-     background-image:url('N.png')
+     background-image:url('N.png');
 }
 #selection,#selection2{
     display:flex;
@@ -20,7 +20,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 20px;
+    margin:1%;
 }
 .row{
      display: flex;
@@ -30,9 +30,17 @@ body {
 }
 
 
-.box, .middle-box {
+.box {
     border: 5px solid #ff4040;
-    width: 300px;
+    width:290px ;
+    padding: 10px;
+    margin: 10px;
+    justify-content:center;
+    align-items:center;
+}
+.middle-box {
+    border: 5px solid #ff4040;
+    width:250px ;
     padding: 10px;
     margin: 10px;
     justify-content:center;
@@ -84,7 +92,7 @@ button {
     background-color: orange;
     margin: 2px;
 }
-@media only screen and (max-width:600px) {
+@media only screen and (max-width:1400px) {
    .body{
        flex-direction:column;
    }
@@ -92,7 +100,7 @@ button {
         width:100%;
     }
     .container{
-         flex-direction:column;
-        } 
+        flex-direction: column;
+    }
         
 }
