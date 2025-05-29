@@ -135,7 +135,8 @@ damage_calc(attacker,defender){
         if (this.effects=="disable"){
            if(defender.lastMoveUsed){
             this.effected_moves.push(defender.lastMoveUsed)
-            this.effected_moves[0].isEnabled = false
+            this.effected_moves[0].isEnabled = false;
+            this.effected_moves[0].active=false;
             append_message(`${attacker.name} disable effect ${this.turns} turns left `);
             if(this.turns <= 0){
                 this.active = false
